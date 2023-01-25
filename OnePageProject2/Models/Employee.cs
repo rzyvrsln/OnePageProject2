@@ -6,10 +6,10 @@ namespace OnePageProject2.Models
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string ImageUrl { get; set; }
-        public string Facebook { get; set; }
-        public string Instagram { get; set; }
-        public string Twitter { get; set; }
+        public string? ImageUrl { get; set; }
+        public string? Facebook { get; set; }
+        public string? Instagram { get; set; }
+        public string? Twitter { get; set; }
         public int PositionId { get; set; }
         public Position Position { get; set; }
     }

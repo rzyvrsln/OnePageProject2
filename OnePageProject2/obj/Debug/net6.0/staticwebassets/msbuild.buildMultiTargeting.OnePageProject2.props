@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\OnePageProject2.props" />
+</Project>

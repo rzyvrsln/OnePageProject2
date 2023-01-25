@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using OnePageProject2.DAL;
+
 namespace OnePageProject2
 {
     public class Program
@@ -6,6 +9,10 @@ namespace OnePageProject2
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<AppDbContext>(opt =>
+            {
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL"));
+            });
             var app = builder.Build();
 
             app.UseStaticFiles();

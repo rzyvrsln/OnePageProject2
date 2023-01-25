@@ -4,7 +4,7 @@ namespace OnePageProject2.Models
 {
     public class Position:BaseEntity
     {
-        public string name { get; set; }
-        public ICollection<Position> positions { get; set; }
+        public string Name { get; set; }
+        public ICollection<Employee> Employees { get; set;}
     }
 }

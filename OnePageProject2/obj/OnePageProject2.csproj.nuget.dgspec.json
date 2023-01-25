@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\OnePageProject2.csproj": {}
+    "C:\\Users\\ca.r215.06\\Desktop\\OnePageProject2\\OnePageProject2\\OnePageProject2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\OnePageProject2.csproj": {
+    "C:\\Users\\ca.r215.06\\Desktop\\OnePageProject2\\OnePageProject2\\OnePageProject2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\OnePageProject2.csproj",
+        "projectUniqueName": "C:\\Users\\ca.r215.06\\Desktop\\OnePageProject2\\OnePageProject2\\OnePageProject2.csproj",
         "projectName": "OnePageProject2",
-        "projectPath": "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\OnePageProject2.csproj",
-        "packagesPath": "C:\\Users\\Ruslan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\obj\\",
+        "projectPath": "C:\\Users\\ca.r215.06\\Desktop\\OnePageProject2\\OnePageProject2\\OnePageProject2.csproj",
+        "packagesPath": "C:\\Users\\ca.r215.06\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ca.r215.06\\Desktop\\OnePageProject2\\OnePageProject2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ruslan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ca.r215.06\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,16 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.2, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.11, )"
@@ -64,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
