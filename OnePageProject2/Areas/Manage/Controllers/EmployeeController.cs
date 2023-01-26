@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OnePageProject2.DAL;
 using OnePageProject2.Models;
@@ -24,7 +25,7 @@ namespace OnePageProject2.Areas.Manage.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            ViewBag.Positions = _context.Positions;
+            ViewBag.Positions = new SelectList(nameof(Position.Id), nameof(Position.Name));
             return View();
         }
 
@@ -33,7 +34,7 @@ namespace OnePageProject2.Areas.Manage.Controllers
         {
             if (!ModelState.IsValid) return View();
 
-            if(!(_context.Employees.Any(e=>e.PositionId == createEmployeeVM.PositionId)))
+            if(_context.Employees.Any(e=>e.PositionId != createEmployeeVM.PositionId))
             {
                 ModelState.AddModelError("PositionId", "secdiyiniz Position movcud deyil.");
                 return View();
@@ -74,6 +75,18 @@ namespace OnePageProject2.Areas.Manage.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index), "Employee");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if(!ModelState.IsValid) return View();
+            if (id is null) return BadRequest();
+            var employee = await _context.Employees.FindAsync(id);
+            _context.Employees.Remove(employee);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index),"Employee");
         }
     }
 }
