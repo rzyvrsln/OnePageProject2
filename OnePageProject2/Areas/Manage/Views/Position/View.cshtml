@@ -1,0 +1,35 @@
+﻿@using OnePageProject2.Models
+
+@{
+    ViewData["Title"] = "View";
+}
+
+@model Position
+
+<div class="content-wrapper " style="padding-top:20px">
+    <section class="content container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+
+                        <form>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="Name"></label>
+                                    <input asp-for="Name" class="form-control" readonly>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <button asp-controller="Position" asp-action="Index" class="btn btn-warning">Return to list</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

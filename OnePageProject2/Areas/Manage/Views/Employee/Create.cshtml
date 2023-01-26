@@ -1,0 +1,71 @@
+﻿@using OnePageProject2.Models
+@using OnePageProject2.ViewModels.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@model CreateEmployeeVM
+
+<div class="content-wrapper " style="padding-top:20px">
+    <section class="content container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="Name"></label>
+                                    <input asp-for="Name" class="form-control" placeholder="Name">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Surname"></label>
+                                    <input asp-for="Surname" class="form-control" placeholder="Surname">
+                                    <span asp-validation-for="Surname" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Facebook"></label>
+                                    <input asp-for="Facebook" class="form-control" placeholder="Facebook">
+                                    <span asp-validation-for="Facebook" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Instagram"></label>
+                                    <input asp-for="Instagram" class="form-control" placeholder="Instagram">
+                                    <span asp-validation-for="Instagram" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Twitter"></label>
+                                    <input asp-for="Twitter" class="form-control" placeholder="Twitter">
+                                    <span asp-validation-for="Twitter" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label asp-for="Image"></label>
+                                    <div class="input-group">
+                                        <input class="form-control" asp-for="Image">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PositionId">Position</label>
+                                    <select class="form-control" asp-items="new SelectList(ViewBag.Positions,nameof(Position.Id),nameof(Position.Name))">
+                                        <option disabled selected>Select option</option>
+                                    </select>
+                                    <span asp-validation-for="PositionId" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer">
+                                <button class="btn btn-primary">Create</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

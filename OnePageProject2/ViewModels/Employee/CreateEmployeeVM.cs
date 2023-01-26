@@ -1,8 +1,6 @@
-﻿using OnePageProject2.Models;
-
-namespace OnePageProject2
+﻿namespace OnePageProject2.ViewModels.Employee
 {
-    public class CreateEmployeeVm
+    public class CreateEmployeeVM
     {
         public string Name { get; set; }
         public string Surname { get; set; }

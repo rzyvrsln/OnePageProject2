@@ -11,6 +11,6 @@ namespace OnePageProject2.Models
         public string? Instagram { get; set; }
         public string? Twitter { get; set; }
         public int PositionId { get; set; }
-        public Position Position { get; set; }
+        public Position? Position { get; set; }
     }
 }
