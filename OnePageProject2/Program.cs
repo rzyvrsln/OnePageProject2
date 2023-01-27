@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.EntityFrameworkCore;
 using OnePageProject2.DAL;
+using OnePageProject2.Models;
 
 namespace OnePageProject2
 {
@@ -13,9 +16,21 @@ namespace OnePageProject2
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSQL"));
             });
+            builder.Services.AddIdentity<AppUser, IdentityRole>(option =>
+            {
+                option.Password.RequireLowercase = true;
+                option.Password.RequireDigit = true;
+                option.Password.RequireNonAlphanumeric = false;
+                option.Password.RequiredLength = 3;
+                option.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.";
+                option.User.RequireUniqueEmail = true;
+                option.Lockout.AllowedForNewUsers = true;
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
             var app = builder.Build();
 
             app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "areas",

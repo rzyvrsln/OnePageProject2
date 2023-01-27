@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gSi70rEEj6WnYA57yLAcAyRIpsO7JsIDRSI2GdKK7pI=",
+  "Hash": "uiPQqaGv5yIWKr0pKryLD94x1n5BgTwMjWj06wPToGM=",
   "Source": "OnePageProject2",
   "BasePath": "_content/OnePageProject2",
   "Mode": "Default",
@@ -814,6 +814,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\scss\\Readme.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\wwwroot\\assets\\user\\key\\key.png",
+      "SourceId": "OnePageProject2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\wwwroot\\",
+      "BasePath": "_content/OnePageProject2",
+      "RelativePath": "assets/user/key/key.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\user\\key\\key.png"
+    },
+    {
+      "Identity": "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\wwwroot\\assets\\user\\userr\\user.png",
+      "SourceId": "OnePageProject2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\wwwroot\\",
+      "BasePath": "_content/OnePageProject2",
+      "RelativePath": "assets/user/userr/user.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\user\\userr\\user.png"
     },
     {
       "Identity": "C:\\Users\\Ruslan\\Desktop\\OnePageProject2\\OnePageProject2\\wwwroot\\assets\\vendor\\animate.css\\animate.compat.css",

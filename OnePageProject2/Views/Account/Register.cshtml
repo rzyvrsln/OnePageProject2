@@ -1,0 +1,51 @@
+﻿@using OnePageProject2.ViewModels.AppUser
+@{
+    ViewData["Title"] = "Register";
+}
+
+@model RegisterVM
+
+<div class="register-box container" style="padding-top:90px">
+
+    <div class="card">
+        <div class="card-body register-card-body">
+            <p class="login-box-msg">Register a new membership</p>
+
+            <form method="post">
+                <div class="input-group mb-3">
+                    <input asp-for="FirstName" class="form-control" placeholder="Name"><br />
+                    <span asp-validation-for="FirstName"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <input asp-for="LastName" class="form-control" placeholder="Surname"><br />
+                    <span asp-validation-for="LastName"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <input asp-for="UserName" class="form-control" placeholder="Surname"><br />
+                    <span asp-validation-for="UserName"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <input asp-for="Email" class="form-control" placeholder="Email"><br />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <input asp-for="Password" class="form-control" placeholder="Password"><br />
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div class="input-group mb-3">
+                    <input asp-for="ComfirmPassword" class="form-control" placeholder="Retype password"><br />
+                    <span asp-validation-for="ComfirmPassword"></span>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <button class="btn btn-primary btn-block">Register</button>
+                    </div>
+                </div>
+            </form>
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <a asp-controller="Account" asp-action="Login" class="text-center">I already have a membership</a>
+        </div>
+    </div>
+</div>
+
