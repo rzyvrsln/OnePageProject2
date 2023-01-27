@@ -1,0 +1,61 @@
+﻿@using OnePageProject2.Models
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+@model Setting
+
+<div class="content-wrapper " style="padding-top:20px">
+    <section class="content container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+
+                        <form method="post">
+                            <div class="card-body">
+                                @*@if (Model.Key.StartsWith("Logo"))
+                                {
+                                    <div class="form-group">
+                                        <label asp-for="Value"></label><br />
+                                        <img src="@Model.Value" style="width:70px">
+                                        <span asp-validation-for="Value" class="text-danger"></span>
+                                    </div>
+                                }*@
+                                @*else
+                                {
+                                    *@<div class="form-group">
+                                        <label asp-for="Value"></label>
+                                        <input asp-for="Value" class="form-control" >
+                                        <span asp-validation-for="Value" class="text-danger"></span>
+                                    </div>
+
+                                @*}*@
+
+                                @*<div class="form-group">
+                                <label asp-for="Description"></label>
+                                <input asp-for="Description" class="form-control" placeholder="Description">
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>*@
+                                @*<div class="form-group">
+                                <label asp-for="Image"></label>
+                                <div class="input-group">
+                                <input class="form-control" asp-for="Image">
+                                </div>
+                                </div>*@
+
+                            </div>
+
+                            <div class="card-footer">
+                                <button class="btn btn-primary">Update</button>
+                                <a asp-controller="Setting" asp-action="Index" class="btn btn-warning">Cancel</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

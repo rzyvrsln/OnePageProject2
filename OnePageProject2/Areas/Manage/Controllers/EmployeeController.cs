@@ -25,7 +25,7 @@ namespace OnePageProject2.Areas.Manage.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            ViewBag.Positions = new SelectList(nameof(Position.Id), nameof(Position.Name));
+            ViewBag.Positions = new SelectList(_context.Positions,nameof(Position.Id), nameof(Position.Name));
             return View();
         }
 
@@ -33,12 +33,6 @@ namespace OnePageProject2.Areas.Manage.Controllers
         public async Task<IActionResult> Create(CreateEmployeeVM createEmployeeVM)
         {
             if (!ModelState.IsValid) return View();
-
-            if(_context.Employees.Any(e=>e.PositionId != createEmployeeVM.PositionId))
-            {
-                ModelState.AddModelError("PositionId", "secdiyiniz Position movcud deyil.");
-                return View();
-            }
 
             IFormFile file = createEmployeeVM.Image;
 
@@ -83,10 +77,38 @@ namespace OnePageProject2.Areas.Manage.Controllers
             if(!ModelState.IsValid) return View();
             if (id is null) return BadRequest();
             var employee = await _context.Employees.FindAsync(id);
+
             _context.Employees.Remove(employee);
+
+            
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index),"Employee");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Update(int? id)
+        {
+            if(!ModelState.IsValid || id is null) return BadRequest();
+            var position = await _context.Employees.FindAsync(id);
+            if(position is null) return NotFound();
+            ViewBag.Positions = new SelectList(_context.Positions, nameof(Position.Id), nameof(Position.Name));
+
+            return View(position);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update()
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> View(int? id)
+        {
+            var employee = await _context.Employees.Include(e => e.Position).FirstOrDefaultAsync(e=>e.Id==id);
+
+            return View(employee);
         }
     }
 }

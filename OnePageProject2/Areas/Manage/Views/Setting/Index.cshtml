@@ -1,0 +1,88 @@
+﻿@using OnePageProject2.Models
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model ICollection<Setting>
+
+<div class="wrapper">
+    <div class="content-wrapper" style="padding-top:20px">
+        <section class="content ">
+            <div class="card container">
+                <div class="card-header">
+                    <h3 class="card-title">Posts</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        @*<button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                        </button>*@
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-striped projects">
+                        <thead>
+                            <tr>
+                                <th style="width: 1%">
+                                    #
+                                </th>
+                                <th style="width: 10%">
+                                    Key
+                                </th>
+                                <th style="width: 10%">
+                                    Value
+                                </th>
+
+                                <th>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                int count = 0;
+                            }
+
+                            @foreach (var setting in Model ?? new List<Setting>())
+                            {
+                                count++;
+
+                                <tr>
+                                    <td>@count</td>
+                                    <td>@setting.Key</td>
+                                    @if (setting.Key.StartsWith("Logo"))
+                                    {
+                                        <td><img style="width:70px;" src="@setting.Value" /></td>
+                                    }
+                                    else
+                                    {
+                                        <td>@setting.Value</td>
+                                    }
+
+                                    <td class="project-actions text-right">
+                                        @*<a class="btn btn-primary btn-sm" asp-controller="Position" asp-action="View" asp-route-id="@position.Id">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    View
+                                    </a>*@
+                                        <a class="btn btn-info btn-sm" asp-controller="Setting" asp-action="Update" asp-route-id="@setting.Id">
+                                            <i class="fas fa-pencil-alt">
+                                            </i>
+                                            Edit
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

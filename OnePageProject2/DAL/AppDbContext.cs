@@ -9,5 +9,6 @@ namespace OnePageProject2.DAL
 
         public DbSet<Position> Positions { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<Setting> Settings { get; set; }
     }
 }

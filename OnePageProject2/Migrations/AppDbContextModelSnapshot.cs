@@ -76,6 +76,26 @@ namespace OnePageProject2.Migrations
                     b.ToTable("Positions");
                 });
 
+            modelBuilder.Entity("OnePageProject2.Models.Setting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Key")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
+                });
+
             modelBuilder.Entity("OnePageProject2.Models.Employee", b =>
                 {
                     b.HasOne("OnePageProject2.Models.Position", "Position")

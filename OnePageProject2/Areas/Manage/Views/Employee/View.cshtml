@@ -1,0 +1,77 @@
+﻿@using OnePageProject2.Models
+
+@{
+    ViewData["Title"] = "View";
+}
+
+@model Employee
+
+<div class="content-wrapper " style="padding-top:20px">
+    <section class="content container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card card-primary">
+
+                        <form>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="Name"></label>
+                                    <input asp-for="Name" class="form-control" readonly>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="Surname"></label>
+                                    <input asp-for="Surname" class="form-control" readonly>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="Facebook"></label>
+                                    <input asp-for="Facebook" class="form-control" readonly>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="Instagram"></label>
+                                    <input asp-for="Instagram" class="form-control" readonly>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="Twitter"></label>
+                                    <input asp-for="Twitter" class="form-control" readonly>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="Position.Name">Position</label>
+                                    <input asp-for="Position.Name" class="form-control" readonly>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label asp-for="ImageUrl">Image</label><br />
+                                    <img style="Width:200px;" src="~/assets/img/employee/@Model.ImageUrl" />
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="card-footer">
+                                <button asp-controller="Employee" asp-action="Index" class="btn btn-warning">Return to list</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
