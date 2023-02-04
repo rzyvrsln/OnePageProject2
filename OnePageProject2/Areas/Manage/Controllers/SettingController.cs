@@ -9,10 +9,12 @@ namespace OnePageProject2.Areas.Manage.Controllers
     public class SettingController : Controller
     {
         readonly AppDbContext _context;
+        readonly IWebHostEnvironment _env;
 
-        public SettingController(AppDbContext context)
+        public SettingController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         [HttpGet]
@@ -25,25 +27,22 @@ namespace OnePageProject2.Areas.Manage.Controllers
             var setting = await _context.Settings.FirstOrDefaultAsync(x => x.Id == id);
             if (setting is null) return NotFound();
 
+            ViewBag.Values = setting.Value;
+
             return View(setting);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Update(int? id, Setting setting)
-        {
-            if (!ModelState.IsValid) return View();
-            if (id is null) return NotFound();
-            if (setting is null) return BadRequest();
-            var setting1 = await _context.Settings.FirstOrDefaultAsync(x => x.Id == id);
+        //[HttpPost]
+        //public async Task<IActionResult> Update(int? id)
+        //{
+        //    if (!ModelState.IsValid) return View();
+        //    if (id is null) return NotFound();
+        //    var setting1 = await _context.Settings.FirstOrDefaultAsync(x => x.Id == id);
+        //    if(setting1 is null) return NotFound();
 
-            if(!(setting.Key.Contains("Logo")))
-            {
-                setting1.Value = setting.Value;
-                _context.Settings.Update(setting1);
-                await _context.Settings.SingleAsync();
-            }
 
-            return RedirectToAction(nameof(Index), "Setting");
-        }
+
+        //    return RedirectToAction(nameof(Index), "Setting");
+        //}
     }
 }
